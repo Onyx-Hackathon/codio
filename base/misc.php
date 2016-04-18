@@ -2,7 +2,7 @@
 <?php
 session_start();
 	//Basic DB Functions-----------------------------------------------------------------
-	function connectDB($host="localhost",$user="codeuser",$pass="",$db="codehub"){
+	function connectDB($host="localhost",$user="root",$pass="onyxhackathon1!",$db="codio"){
 		$conn = new mysqli($host, $user, $pass, $db);
 		// Check connection
 		if ($conn->connect_error) {
