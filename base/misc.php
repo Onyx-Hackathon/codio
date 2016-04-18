@@ -2,7 +2,7 @@
 <?php
 session_start();
 	//Basic DB Functions-----------------------------------------------------------------
-	function connectDB($host="localhost",$user="root",$pass="onyxhackathon1!",$db="codio"){
+	function connectDB($host="codio.cka0mbi9tnua.us-west-2.rds.amazonaws.com:3306",$user="root",$pass="onyxhackathon1!",$db="codio"){
 		$conn = new mysqli($host, $user, $pass, $db);
 		// Check connection
 		if ($conn->connect_error) {
