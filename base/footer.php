@@ -1,7 +1,7 @@
 </div>
 <div style="margin-top:150px; overflow:hidden;"></div>
 <footer class="col-md-12">
-<div class="alert alert-info" role="alert"><p>© Copyright 2016, Code Hub. All rights reserved. 
+<div class="alert alert-info" role="alert"><p>© Copyright 2016, Codio. All rights reserved. 
 <!--a href="about.php">About Us</a> | 
 <a href="about.php#contact">Contact Us</a> | 
 <a href="docs">API</a> | 
