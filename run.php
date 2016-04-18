@@ -1,5 +1,5 @@
 <?php include_once("base/header.php");?>
-<?php include("compile/compile.php");
+<?php include("base/compile.php");
 
 //Setting up the Hackerearth API
 $hackerearth = Array(
