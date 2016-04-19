@@ -8,24 +8,26 @@
 		switch($operation){
 			case "login":
 				if (isset($_GET["u"]) && isset($_GET["p"])){
-					if (userLogin($_GET["u"],$_GET["p"]))
-						redirect(" user.php?op=profile");
+					if (userLogin($_GET["u"],$_GET["p"])){
+						redirect($_GET["redirect"]);
+					}
 					else
 						echo errorHTML(202,4);
-						echo printLoginForm();
+						echo printLoginForm($_GET["redirect"]);
+						
 				}
 				else{
 					//show login form
-					echo printLoginForm();
+					echo printLoginForm($_SERVER["HTTP_REFERER"]);
 				}
 
 				break;
 			case "logout":
 				//session_destroy
 				if (isset($_SESSION["name"])){
-					$user = $_SESSION["name"];
+					$url=$_SERVER["HTTP_REFERER"];
 					session_destroy();
-					echo $user." has been logged out";
+					redirect($url);
 				}
 				else
 				{
@@ -113,7 +115,7 @@
 
 		}
 	}
-	function printLoginForm()
+	function printLoginForm($urltodirect)
 	{	$html = titlePrint("Login",FALSE);
 		$html.='<center>
 				<form action="user.php" method="get" style="max-width:300px;">
@@ -126,6 +128,7 @@
   						<span class="input-group-addon" id="basic-addon2">Password</span>
   						<input type="password" class="form-control" placeholder="" aria-describedby="basic-addon2" name="p">
 					</div><br>
+					<input type="hidden" name="redirect" value="'.$urltodirect.'">
 				<input type="submit" class="form-control btn btn-primary"  value="Login">
 				<br><br>New User?
 				<a href="user.php?op=register" class="btn btn-info form-control">Register</a>

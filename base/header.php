@@ -49,6 +49,16 @@ $(document).ready(function(){
                       <input type="text" class="form-control" placeholder="Search " name="q" >
           		</form>
           	</li>
+
+            <li class="dropdown" style="float:left; margin-right:10px;">
+              <a class="btn dropdown-toggle" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-th-large" ></span>&nbsp;</a>
+              <ul class="dropdown-menu">
+                <li><a href="code.php?op=viewall">View</a></li>
+                <li><a href="submit-code.php">Submit</a></li>
+                <li><a href="run.php">Run</a></li>
+              </ul>
+            </li>  
+
           	<?php
             if (isset($_SESSION["name"]))
             {echo "<li class='dropdown'>";
