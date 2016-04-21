@@ -2,7 +2,12 @@
 <?php
 session_start();
 	//Basic DB Functions-----------------------------------------------------------------
-	function connectDB($host="localhost",$user="root",$pass="",$db="codio"){
+	function connectDB(){
+		$dbs = parse_ini_file("base/db.ini",true);
+		$host = $dbs["general"]["host"];
+		$user = $dbs["general"]["user"];
+		$pass = $dbs["general"]["pass"];
+		$db = $dbs["general"]["database"];
 		$conn = new mysqli($host, $user, $pass, $db);
 		// Check connection
 		if ($conn->connect_error) {
