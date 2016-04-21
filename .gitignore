@@ -45,9 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-<<<<<<< HEAD
+
+# Ignore db.ini file
 base/db.ini
-=======
-
-
->>>>>>> origin/master
