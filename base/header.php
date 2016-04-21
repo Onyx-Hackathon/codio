@@ -51,11 +51,11 @@ $(document).ready(function(){
           	</li>
 
             <li class="dropdown" style="float:left; margin-right:10px;">
-              <a class="btn dropdown-toggle" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-th-large" ></span>&nbsp;</a>
+              <a class="dropdown-toggle" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-th-large" ></span>&nbsp;</a>
               <ul class="dropdown-menu">
-                <li><a href="code.php?op=viewall">View</a></li>
-                <li><a href="submit-code.php">Submit</a></li>
-                <li><a href="run.php">Run</a></li>
+                <li><a href="code.php?op=viewall"><span class="glyphicon glyphicon-console"></span>&nbsp;View</a></li>
+                <li><a href="submit-code.php"><span class="glyphicon glyphicon-edit"></span>&nbsp;Submit</a></li>
+                <li><a href="run.php"><span class="glyphicon glyphicon-play"></span>&nbsp;Run</a></li>
               </ul>
             </li>  
 

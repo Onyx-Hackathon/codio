@@ -16,5 +16,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="base/js/jquery.js"></script>
     <script src="base/js/bootstrap.min.js"></script>
+    
   </body>
   </html>

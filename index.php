@@ -26,19 +26,21 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
     padding:5px;
 }
 </style>
+
+
 <br>
 <div class="fixed">
             <div class="dropdown" style="float:left; margin-right:10px;">
-              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-th-large" ></span>&nbsp;</a>
+              <a class="btn btn-primary dropdown-toggle btn-lg" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-th-large" ></span>&nbsp;</a>
               <ul class="dropdown-menu">
-                <li><a href="code.php?op=viewall">View</a></li>
-                <li><a href="submit-code.php">Submit</a></li>
-                <li><a href="run.php">Run</a></li>
+                <li><a href="code.php?op=viewall"><span class="glyphicon glyphicon-console"></span>&nbsp;View</a></li>
+                <li><a href="submit-code.php"><span class="glyphicon glyphicon-edit"></span>&nbsp;Submit</a></li>
+                <li><a href="run.php"><span class="glyphicon glyphicon-play"></span>&nbsp;Run</a></li>
               </ul>
             </div>  
              <?php if (isset($_SESSION["name"]))
             {echo "<div class='dropdown' style='float:right;'>";
-             echo "<a  class='btn btn-primary' href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>";
+             echo "<a  class='btn-lg btn btn-primary' href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>";
               echo $_SESSION["name"];
               echo "<span class='caret'></span></a>";
               echo "<ul class='dropdown-menu'>";
@@ -56,14 +58,14 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
               echo '<div style="float:right;"><form role="form" class="form" action="user.php" method="get">';
               echo '<input type="hidden" name="op" value="login">
                     <div class="input-group">';
-              echo '<input type="submit" value="Login" class="btn btn-primary">';
+              echo '<input type="submit" value="Login" class="btn btn-primary btn-lg">';
               echo '</div></form></div>';
             }
             ?>
 </div>
-<div class="page-header" style="border:none;">
+<div class="page-header" style="border:none; padding-top:30px;">
   
-  <center><img src="base/pics/codio.png" width=40%></center>
+  <center><img src="base/pics/codio.png" width=50%></center>
 </div>
 
 <div class="col-md-12" style="padding-bottom:80px;">
@@ -82,5 +84,58 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
 </div>
 
 </div>
+</div>
 
-<?php include_once("base/footer.php");?>
+<footer class="col-md-12">
+<div class="" style="width:60%; position:fixed; bottom:10%; left:20%; padding:10px; background-color:#fff;color:<?php echo getSetting("index_button");?>;border:none;" role="alert"><p style="margin:0;">© Copyright 2016, Codio. All rights reserved. 
+
+</p></div><br><br>
+</footer>
+</div>
+
+
+<script src="base/js/jquery.js"></script>
+<script src="base/js/typed.js"></script>
+<script>
+  $(function(){
+      $("#element").typed({
+        strings: [
+        "\“Talk is cheap. Show me the code.\”", 
+        "\"when you don't create things, you become defined by your tastes rather than ability. your tastes only narrow and exclude people. so create.\"",
+        "\“Programs must be written for people to read, and only incidentally for machines to execute.\”",
+        "\“Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.\”",
+        "\“Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live\”",
+        "\“That\'s the thing about people who think they hate computers. What they really hate is lousy programmers.\” ",
+        "\“I\'m not a great programmer; I'm just a good programmer with great habits.\”",
+        "\“A language that doesn't affect the way you think about programming is not worth knowing.\”",
+        "\“Walking on water and developing software from a specification are easy if both are frozen.\” ",
+        "\“Life is like programming. We fail to compile, because realization comes from warnings and success comes from experience.\”"
+
+        ],
+        typeSpeed: 10,
+        loop:true
+      });
+  });
+</script>
+<style>
+@media screen and (max-width: 600px) {
+  #element {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
+</style>
+<div id="element" style="float:left; position:absolute; top:20px; left:30px; font-size:1.12em; width:350px;" ></div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="base/js/bootstrap.min.js"></script>
+
+  </body>
+  </html>

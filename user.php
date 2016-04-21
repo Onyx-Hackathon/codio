@@ -93,6 +93,8 @@
 				//redirect to edit page
 				break;
 			case "submissions":
+			if(isset($_SESSION["email"])==FALSE)
+				redirect("index.php");
 				$conn = connectDB();
 				$result = queryDB($conn,getSQL("submissions",$_SESSION["email"]));
 				if ($result===FALSE)
