@@ -8,6 +8,7 @@ session_start();
 		$user = $dbs["general"]["user"];
 		$pass = $dbs["general"]["pass"];
 		$db = $dbs["general"]["database"];
+		echo "<script>alert('".$host.$user.$pass.$db."');</script>";
 		$conn = new mysqli($host, $user, $pass, $db);
 		// Check connection
 		if ($conn->connect_error) {
