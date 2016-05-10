@@ -7,7 +7,7 @@ session_start();
 		echo getDBSetting("host");
 		//parsing doesnt work. 
 
-		$host = "codio.cka0mbi9tnua.us-west-2.rds.amazonaws.com";
+		$host = getDBSetting("host");
 		$user = "root";
 		$pass = "onyxhackathon1!";
 		$db = "codio";
@@ -391,7 +391,7 @@ session_start();
 
 
 	function getDBSetting($setting){
-		$set=parse_ini_file("base/db.ini",true);
+		$set=parse_ini_file("db.ini",true);
 		//print_r($set);
 		switch($setting){
 			case "host":return $set["general"]["host"];
