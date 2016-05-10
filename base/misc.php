@@ -4,7 +4,7 @@ session_start();
 	//Basic DB Functions-----------------------------------------------------------------
 	function connectDB(){
 		$dbs = parse_ini_file("db.ini",true);
-		#parsing doesnt work. 
+		//parsing doesnt work. 
 
 		$host = "codio.cka0mbi9tnua.us-west-2.rds.amazonaws.com";
 		$user = "root";
