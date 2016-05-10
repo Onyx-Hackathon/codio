@@ -3,8 +3,8 @@
 session_start();
 	//Basic DB Functions-----------------------------------------------------------------
 	function connectDB(){
-		$set=parse_ini_file("base/db.ini",true);
-		echo $set["general"]["host"];
+		
+		echo getDBSetting("host");
 		//parsing doesnt work. 
 
 		$host = "codio.cka0mbi9tnua.us-west-2.rds.amazonaws.com";
@@ -388,6 +388,21 @@ session_start();
 
 		}
 	}
+
+
+	function getDBSetting($setting){
+		$set=parse_ini_file("base/db.ini",true);
+		//print_r($set);
+		switch($setting){
+			case "host":return $set["general"]["host"];
+			case "user":return $set["general"]["user"];
+			case "pass":return $set["general"]["pass"];
+			case "db":return $set["general"]["database"];
+
+		}
+	}
+
+
 
 
 	function getExtension($lang){
