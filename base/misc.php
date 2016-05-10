@@ -9,7 +9,7 @@ session_start();
 
 		$host = getDBSetting("host");
 		$user = getDBSetting("user");
-		$pass = str_replace("<exclamation>","!"getDBSetting("pass"));
+		$pass = str_replace("-ex-","!"getDBSetting("pass"));
 		$db = getDBSetting("db");
 		
 		$conn = new mysqli($host, $user, $pass, $db);
