@@ -4,7 +4,7 @@ session_start();
 	//Basic DB Functions-----------------------------------------------------------------
 	function connectDB(){
 		
-		echo getDBSetting("host");
+		
 		//parsing doesnt work. 
 
 		$host = getDBSetting("host");
