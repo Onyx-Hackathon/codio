@@ -9,7 +9,7 @@ session_start();
 
 		$host = getDBSetting("host");
 		$user = getDBSetting("user");
-		$pass = getDBSetting("pass")."!";
+		$pass = str_replace("-ex-","!",getDBSetting("pass"));
 		$db = getDBSetting("db");
 		
 		$conn = new mysqli($host, $user, $pass, $db);
@@ -391,7 +391,7 @@ session_start();
 
 
 	function getDBSetting($setting){
-		$set=parse_ini_file("dbset.ini",true);
+		$set=parse_ini_file("db.ini",true);
 		//print_r($set);
 		switch($setting){
 			case "host":return $set["general"]["host"];
