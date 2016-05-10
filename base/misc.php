@@ -391,7 +391,7 @@ session_start();
 
 
 	function getDBSetting($setting){
-		$set=parse_ini_file("db.ini",true);
+		$set=parse_ini_file("dbset.ini",true);
 		//print_r($set);
 		switch($setting){
 			case "host":return $set["general"]["host"];
