@@ -3,12 +3,12 @@
 session_start();
 	//Basic DB Functions-----------------------------------------------------------------
 	function connectDB(){
-		$dbs = parse_ini_file("http://www.codio.in/base/db.ini",true);
+		$dbs = parse_ini_file("db.ini",true);
 		$host = $dbs["general"]["host"];
 		$user = $dbs["general"]["user"];
 		$pass = $dbs["general"]["pass"];
 		$db = $dbs["general"]["database"];
-		echo "<script>alert('".$host.$user.$pass.$db."');</script>";
+		#echo "<script>alert('".$host.$user.$pass.$db."');</script>";
 		$conn = new mysqli($host, $user, $pass, $db);
 		// Check connection
 		if ($conn->connect_error) {
