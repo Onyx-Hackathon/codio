@@ -7,7 +7,7 @@
 		$operation = $_GET["op"];	//What does the user want to do?
 		$conn = connectDB();
 		$limit=getSetting("codes_per_page");	//no of items per page
-		echo $limit;
+		
 		switch($operation){
 			
 			case "viewall":	
