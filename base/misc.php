@@ -8,9 +8,9 @@ session_start();
 		//parsing doesnt work. 
 
 		$host = getDBSetting("host");
-		$user = "root";
-		$pass = "onyxhackathon1!";
-		$db = "codio";
+		$user = getDBSetting("user");
+		$pass = getDBSetting("pass");
+		$db = getDBSetting("db");
 		
 		$conn = new mysqli($host, $user, $pass, $db);
 		// Check connection
