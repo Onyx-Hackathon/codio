@@ -391,13 +391,13 @@ session_start();
 
 
 	function getDBSetting($setting){
-		$set=parse_ini_file("dbset.ini",true);
+		$set=parse_ini_file("db.ini",false);
 		//print_r($set);
 		switch($setting){
-			case "host":return $set["general"]["host"];
-			case "user":return $set["general"]["user"];
-			case "pass":return $set["general"]["pass"];
-			case "db":return $set["general"]["database"];
+			case "host":return $set["host"];
+			case "user":return $set["user"];
+			case "pass":return $set["pass"];
+			case "db":return $set["database"];
 
 		}
 	}
