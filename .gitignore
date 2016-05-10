@@ -47,4 +47,4 @@ Temporary Items
 .apdisk
 
 # Ignore db.ini file
-base/db.ini
+#base/db.ini
