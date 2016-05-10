@@ -4,11 +4,13 @@ session_start();
 	//Basic DB Functions-----------------------------------------------------------------
 	function connectDB(){
 		$dbs = parse_ini_file("db.ini",true);
-		$host = $dbs["general"]["host"];
-		$user = $dbs["general"]["user"];
-		$pass = $dbs["general"]["pass"];
-		$db = $dbs["general"]["database"];
-		echo "<script>alert('".$dbs."');</script>";
+		#parsing doesnt work. 
+
+		$host = "codio.cka0mbi9tnua.us-west-2.rds.amazonaws.com";
+		$user = "root";
+		$pass = "onyxhackathon1!";
+		$db = "codio";
+		
 		$conn = new mysqli($host, $user, $pass, $db);
 		// Check connection
 		if ($conn->connect_error) {
