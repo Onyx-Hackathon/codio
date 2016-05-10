@@ -3,7 +3,7 @@
 session_start();
 	//Basic DB Functions-----------------------------------------------------------------
 	function connectDB(){
-		$dbs = parse_ini_file("base/db.ini",true);
+		$dbs = parse_ini_file("db.ini",true);
 		$host = $dbs["general"]["host"];
 		$user = $dbs["general"]["user"];
 		$pass = $dbs["general"]["pass"];
