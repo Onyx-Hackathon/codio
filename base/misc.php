@@ -136,7 +136,7 @@ session_start();
 				</tr>';
 			while($row = $result->fetch_assoc()) {
 				$html .= "<tr>";
-				$html .= "<td> <a href='code.php?op=single&id=".$row["code_id"]."' >" . $row["code_title"]. " <span title='Votes' class='badge'>".getVotes($row["code_id"])."<span></a></td>";
+				$html .= "<td> <a href='code.php?op=single&id=".$row["code_id"]."' >" . $row["code_title"]. "</a> <span title='Votes' class='badge'>".getVotes($row["code_id"])."<span></td>";
 				$html .= "<td>" . $row["usage"]. "</td>";
 				$html .= "<td> <a href='code.php?op=filter&fvar=lang&fval=".$row["lang"]."'>" . $row["lang"]. "</a></td>";
 				$html .= "<td> <a href='code.php?op=filter&fvar=author&fval=".$row["author_name"]."'>" . $row["author_name"]."</a></td>";
