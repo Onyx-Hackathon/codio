@@ -53,6 +53,7 @@ echo '</p></div>';
 	<div class="input-group input-group-lg">
 		<span class="input-group-addon" id="basic-addon2">Language</span>
 		<select name="lang" class="form-control" aria-describedby="basic-addon2">
+			<option value="Arduino">Arduino</option>
 			<option value="JAVA">Java</option>
 			<option value="CPP">C++</option>
 			<option value="C">C</option>
