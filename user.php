@@ -83,7 +83,6 @@
 				$_SESSION["form-name"]=$_GET["name"];
 				$_SESSION["form-email"]=$_GET["email"];
 				$_SESSION["form-pass"]=$_GET["pass"];
-				$_SESSION["form-mob"]=$_GET["mob"];
 				$sql = getSQL("register");
 				//echo $sql;
 				$conn=connectDB();
@@ -148,7 +147,7 @@
 				</center>';
 		return $html;
 	}
-		function printOTPForm()
+		/*function printOTPForm()
 	{	$html = titlePrint("Enter OTP",FALSE);
 		$html.='<center>
 				<form action="user.php" method="get" style="max-width:300px;">
@@ -163,7 +162,7 @@
 				</form>
 				</center>';
 		return $html;
-	}
+	}*/
 	function printRegisterForm(){
 		$html=titlePrint("Register",FALSE);
 		$html .='<center>
@@ -182,10 +181,10 @@
   						<input type="password" class="form-control" placeholder="" aria-describedby="basic-addon2" name="pass">
 					</div><br>
 
-					<div class="input-group">
+					<!--div class="input-group">
   						<span class="input-group-addon" id="basic-addon2">Mobile</span>
   						<input type="text" class="form-control" placeholder="Only for authentication" aria-describedby="basic-addon2" name="mob">
-					</div><br>
+					</div --><br>
 				<input type="submit" class="form-control" value="Register">
 				</form>
 				</center>';
