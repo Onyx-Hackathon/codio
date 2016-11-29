@@ -1,6 +1,6 @@
 <?php include_once("base/header.php");?>
 
-<?php 
+<?php
 	if ($_SERVER['REQUEST_METHOD']==="GET"){
 		//User Wants to do something
 		$operation = $_GET["op"];	//What does the user want to do?
@@ -14,7 +14,7 @@
 					else
 						echo errorHTML(202,4);
 						echo printLoginForm($_GET["redirect"]);
-						
+
 				}
 				else{
 					//show login form
@@ -48,13 +48,13 @@
 			if (isset($_GET["name"])){
 
 
-
+/*
 				if (isset($_GET["otp"])){
 					echo $_GET["otp"];
 				echo $_SESSION["otp"];
-					if($_GET["otp"]==$_SESSION["otp"])
-						{$sql = getSQL("register");
-					echo $sql;
+					if($_GET["otp"]==$_SESSION["otp"]){
+							$sql = getSQL("register");
+							echo $sql;
 							$conn=connectDB();
 							executeDB($conn,$sql);
 							disconnectDB($conn);
@@ -62,23 +62,33 @@
 							$_SESSION["email"]=$_SESSION["form-email"];
 							redirect("user.php?op=profile");
 						}//register here
-						
+
 				}
 				elseif(isset($_GET["mob"])){
 					$_SESSION["mob"] = $_GET["mob"];
 					$_SESSION["otp"] = rand();
 					$smsLink = "http://www.smszone.in/sendsms.asp?page=SendSmsBulk&username=919008726274&password=D348&number=".$_SESSION["mob"]."&message=Your%20OTP%20is:".$_SESSION["otp"];
-	
+
 					$ch = curl_init($smsLink);
 					curl_exec($ch);
 					curl_close($ch);
-									$_SESSION["form-name"]=$_GET["name"];
+				$_SESSION["form-name"]=$_GET["name"];
 				$_SESSION["form-email"]=$_GET["email"];
 				$_SESSION["form-pass"]=$_GET["pass"];
 				$_SESSION["form-mob"]=$_GET["mob"];
 					echo printOTPForm();
 				}
+*/
 
+				$_SESSION["form-name"]=$_GET["name"];
+				$_SESSION["form-email"]=$_GET["email"];
+				$_SESSION["form-pass"]=$_GET["pass"];
+				$_SESSION["form-mob"]=$_GET["mob"];
+				$sql = getSQL("register");
+				//echo $sql;
+				$conn=connectDB();
+				executeDB($conn,$sql);
+				disconnectDB($conn);
 			}
 			else
 			{
@@ -109,9 +119,9 @@
 				}
 				else{$_GET["page"]=0;}
 				echo titlePrint("My Submissions",FALSE);
-				
+
 				echo getnerateListTable($result);
-				
+
 				echo paginationPrint($_GET["page"],$count);
 				break;
 
@@ -186,13 +196,13 @@
 		$conn = connectDB();
 		$pass = hash("sha256",$pass);
 				//do login
-		$result =  queryDB($conn,"select * from users where email='".$email."' and password='".$pass."'"); 
+		$result =  queryDB($conn,"select * from users where email='".$email."' and password='".$pass."'");
 		if ($result->num_rows>0)
 			{
 				$row  =$result->fetch_assoc();
-				$_SESSION['email'] = $row['email']; 
-        		$_SESSION['name']    = $row['user_name']; 
-        		$_SESSION['logged']   = TRUE; 
+				$_SESSION['email'] = $row['email'];
+        		$_SESSION['name']    = $row['user_name'];
+        		$_SESSION['logged']   = TRUE;
         		return TRUE;
 			}
 		else
@@ -205,9 +215,9 @@
 		}
 		else
 			echo "No user was logged in.";
-		
+
 	}
-	
+
 ?>
 
 <?php include_once("base/footer.php"); ?>
