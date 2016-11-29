@@ -4,7 +4,7 @@
 body{background:<?php echo getSetting("index_bg");?>; color:white;}
 .panel{color:black; border:none;}
 .alert-info{background:<?php echo getSetting("index_footer_bg");?>; color:white; border:0; padding:20px; margin-top:50px;}
-.alert-info  a {color:white; text-decoration: none;} 
+.alert-info  a {color:white; text-decoration: none;}
 
  .panel-index .panel-heading{color:#fff; background-color:<?php echo getSetting("index_panel_heading");?>!important;}
  .panel-index .panel-heading .badge{color:#3d174d;background-color:#fff}
@@ -21,7 +21,7 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
     position: fixed;
     top: 20;
     right: 80;
-    
+
     border: 0px solid #73AD21;
     padding:5px;
 }
@@ -30,14 +30,11 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
 
 <br>
 <div class="fixed">
-            <div class="dropdown" style="float:left; margin-right:10px;">
-              <a class="btn btn-primary dropdown-toggle btn-lg" data-toggle="dropdown">&nbsp;<span class="glyphicon glyphicon-th-large" ></span>&nbsp;</a>
-              <ul class="dropdown-menu">
-                <li><a href="code.php?op=viewall"><span class="glyphicon glyphicon-console"></span>&nbsp;View</a></li>
-                <li><a href="submit-code.php"><span class="glyphicon glyphicon-edit"></span>&nbsp;Submit</a></li>
-                <li><a href="run.php"><span class="glyphicon glyphicon-play"></span>&nbsp;Run</a></li>
-              </ul>
-            </div>  
+                <a href="code.php?op=viewall"><span class="glyphicon glyphicon-console"></span>&nbsp;View</a></li>
+                <a href="submit-code.php"><span class="glyphicon glyphicon-edit"></span>&nbsp;Submit</a></li>
+                <a href="run.php"><span class="glyphicon glyphicon-play"></span>&nbsp;Run</a>
+
+
              <?php if (isset($_SESSION["name"]))
             {echo "<div class='dropdown' style='float:right;'>";
              echo "<a  class='btn-lg btn btn-primary' href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>";
@@ -64,7 +61,7 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
             ?>
 </div>
 <div class="page-header" style="border:none; padding-top:30px;">
-  
+
   <center><img src="base/pics/codio.png" width=50%></center>
 </div>
 
@@ -73,7 +70,7 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
 
 <form role="form" class="form" action="code.php" method="get" style="width:100%;">
   <input type="hidden" name="op" value="search">
-  
+
    <div class="input-group input-group-lg">
       <input type="text" class="form-control" placeholder="Search code..." name="q">
       <span class="input-group-btn">
@@ -87,7 +84,7 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
 </div>
 
 <footer class="col-md-12">
-<div class="" style="width:60%; position:fixed; bottom:10%; left:20%; padding:10px; background-color:#fff;color:<?php echo getSetting("index_button");?>;border:none;" role="alert"><p style="margin:0;">© Copyright 2016, Codio. All rights reserved. 
+<div class="" style="width:60%; position:fixed; bottom:10%; left:20%; padding:10px; background-color:#fff;color:<?php echo getSetting("index_button");?>;border:none;" role="alert"><p style="margin:0;">© Copyright 2016, Codio. All rights reserved.
 
 </p></div><br><br>
 </footer>
@@ -100,7 +97,7 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
   $(function(){
       $("#element").typed({
         strings: [
-        "\“Talk is cheap. Show me the code.\”", 
+        "\“Talk is cheap. Show me the code.\”",
         "\"when you don't create things, you become defined by your tastes rather than ability. your tastes only narrow and exclude people. so create.\"",
         "\“Programs must be written for people to read, and only incidentally for machines to execute.\”",
         "\“Programming today is a race between software engineers striving to build bigger and better idiot-proof programs, and the Universe trying to produce bigger and better idiots. So far, the Universe is winning.\”",
