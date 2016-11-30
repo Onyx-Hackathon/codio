@@ -35,6 +35,7 @@ body{background:<?php echo getSetting("index_bg");?>; color:white;}
                 <a href="run.php"><span class="glyphicon glyphicon-play"></span>&nbsp;Run</a>
 
 
+
              <?php if (isset($_SESSION["name"]))
             {echo "<div class='dropdown' style='float:right;'>";
              echo "<a  class='btn-lg btn btn-primary' href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>";
