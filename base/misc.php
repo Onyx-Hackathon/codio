@@ -1,5 +1,6 @@
 
 <?php
+
 session_start();
 	//Basic DB Functions-----------------------------------------------------------------
 	function connectDB(){
@@ -9,7 +10,7 @@ session_start();
 
 		$host = getDBSetting("host");
 		$user = getDBSetting("user");
-		$pass = getDBSetting("pass")."!";
+		$pass = getDBSetting("pass");
 		$db = getDBSetting("db");
 		
 		$conn = new mysqli($host, $user, $pass, $db);
